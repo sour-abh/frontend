@@ -1,4 +1,5 @@
 
+// @ts-except-error: Could not find a declaration file for module './base.js'.
 import instance from "./base";
 const ApiResources = {
   user: {

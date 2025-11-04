@@ -17,7 +17,7 @@ const Signin:React.FC<SigninProps> = ({handleSignupModel,handlechange,handleRelo
     const [email,setEmail]=React.useState("")
     const [password,setPassword]=React.useState("")
     const [error,setError]=React.useState("")
-    const handleSubmit = async (e:React.MouseEvent<HTMLInputElement>) => {
+    const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       try {
         

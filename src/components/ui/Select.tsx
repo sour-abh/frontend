@@ -1,17 +1,18 @@
 
 import Select, {
   components,
-  type SingleValueProps,
-  type ActionMeta,
+  type SingleValueProps
 } from "react-select";
 import { Image, Video, Twitter, Text } from 'lucide-react';
 
-const Icons = [
-  { label: <Image className="size-4" />, value: 'image' },
-  { label: <Video className="size-4" />, value: 'video' },
-  { label: <Twitter className="size-4" />, value: 'twitter' },
-  { label: <Text className="size-4" />, value: 'text' },
-];
+type IconValue = 'image' | 'video' | 'twitter' | 'text';
+
+export const Icons = [
+  { label: <Image className="size-4" />, value: 'image' as IconValue },
+  { label: <Video className="size-4" />, value: 'video' as IconValue },
+  { label: <Twitter className="size-4" />, value: 'twitter' as IconValue },
+  { label: <Text className="size-4" />, value: 'text' as IconValue },
+] as const;
 
 
 export type IconOption = typeof Icons[number];
@@ -19,7 +20,7 @@ export type IconOption = typeof Icons[number];
 interface CustomSelectProps {
   value: IconOption | null;
   onChange: (option: IconOption | null) => void;
-  options: IconOption[];
+  options: readonly IconOption[];
 }
 
 // Custom component for how the selected value is displayed
@@ -34,11 +35,14 @@ const CustomSingleValue = (props: SingleValueProps<IconOption>) => (
 
 const CustomSelect = ({ value, onChange, options }: CustomSelectProps) => {
   const handleReactSelectChange = (
-    newValue: IconOption | null,
-    actionMeta: ActionMeta<IconOption>
+    newValue: IconOption | null | readonly IconOption[]
   ) => {
-    // Pass only the newValue to the custom handler
-    onChange(newValue);
+    // Pass only the newValue to the custom handler, ensuring it's the right type
+    if (Array.isArray(newValue)) {
+      onChange(newValue[0] || null);
+    } else {
+      onChange(newValue as IconOption | null);
+    }
   };
 
   return (

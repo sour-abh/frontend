@@ -7,7 +7,7 @@ import React from "react";
 import Sidebar from "../components/ui/Sidebar";
 import type { RootState } from "../redux/store";
 import ApiResources from "../api/APIEndpoint";
-import UpdatePostModal from "../components/updatePostModal";
+import UpdatePostModal from "../components/UpdatePostModal";
 import ShareModal from "../components/ShareModal";
 interface LoginSignupProps {
   handleLoginModal: () => void;

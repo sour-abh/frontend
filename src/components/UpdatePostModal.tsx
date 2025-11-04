@@ -1,14 +1,8 @@
-import { Image, Text, Twitter, Video, X } from "lucide-react";
+import { X } from "lucide-react";
 import Button from "./ui/Button";
 import React, { useRef } from "react";
-import CustomSelect, { type IconOption } from "./ui/Select";
+import CustomSelect, { type IconOption, Icons } from "./ui/Select";
 import {type AxiosResponse } from "axios";
-const Icons = [
-  { label: <Image />, value: "image" },
-  { label: <Video />, value: "video" },
-  { label: <Twitter />, value: "twitter" },
-  { label: <Text />, value: "text" },
-];
 interface UpdateResponse {
   message: string;
 }

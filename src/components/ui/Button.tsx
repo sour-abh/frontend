@@ -1,4 +1,4 @@
-import  { type ReactElement } from 'react'
+import React, { type ReactElement } from 'react'
 import { cn } from '../utils/cn';
 
 export interface ButtonProps{
@@ -7,7 +7,7 @@ export interface ButtonProps{
     text:string;
     startIcon?:ReactElement;
     endIcon?:ReactElement;
-    onClick?:()=>void;
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
     className?:string;
 
 }

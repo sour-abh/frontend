@@ -1,14 +1,9 @@
-import { Image, Text, Twitter, Video, X } from "lucide-react";
+import { X } from "lucide-react";
 import Button from "./ui/Button";
 import React, { useRef } from "react";
 import CustomSelect, { type IconOption } from "./ui/Select";
 import ApiResources from "../api/APIEndpoint";
-const Icons = [
-  { label: <Image />, value: "image" },
-  { label: <Video />, value: "video" },
-  { label: <Twitter />, value: "twitter" },
-  { label: <Text />, value: "text" },
-];
+import { Icons } from './ui/Select';
 interface CreateContentModalProps {
   openstate: boolean;
   handlechange: () => void;
