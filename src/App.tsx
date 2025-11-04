@@ -8,7 +8,7 @@ import Signup from './pages/Signup'
 import { logout,sharelink } from './redux/AuthSlice';
 import PublicPosts from './pages/PublicPosts';
 import ApiResources from './api/APIEndpoint';
-import NotFound from './pages/NotFound';
+
 function App() {
        interface Post {
          _id: string;
@@ -137,13 +137,6 @@ const handleShare = async () => {
           }
         />
 
-        <Route
-          path={`/:`}
-          element={
-            <NotFound
-            />
-          }
-        />
       </Routes>
 
       {isModalOpen && (
